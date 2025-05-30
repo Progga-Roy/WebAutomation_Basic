@@ -97,8 +97,17 @@ WebElement getSingleText = driver.findElement(By.xpath("//div[@class='KxwPGc Agh
         System.out.println("Using contains() : " +  extractText2.getText());
         WebElement extractText4 =driver.findElement(By.xpath("//a[text()='Business']/preceding-sibling::a"));
         System.out.println("Proceeding sibling : " +  extractText4.getText());
-        WebElement extractText5 =driver.findElement(By.xpath("//a[text()='Business']/preceding-sibling::a[last()]"));
-        System.out.println("Proceeding sibling use last : " +  extractText5.getText());
+        WebElement extractText5 =driver.findElement(By.xpath("//a[text()='Business']/preceding-sibling::a[1]"));
+        System.out.println("Proceeding sibling use Indexing : " +  extractText5.getText());
+        WebElement extractText6 =driver.findElement(By.xpath("//a[text()='Business']/following-sibling::a"));
+        System.out.println("Following-sibling use Indexing : " +  extractText6.getText());
+//        WebElement extractText7 = driver.findElement(By.xpath("//input[@class='RNmpXc' and @name='btnI']"));
+//        extractText7.click();
+        WebElement extractText7 = driver.findElement(By.xpath("//div[@class='FPdoLc lJ9FBc']//input[@name='btnI']"));
+        extractText7.click();
+        driver.navigate().back();
+
+
 
 
 
