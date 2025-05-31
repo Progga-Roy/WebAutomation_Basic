@@ -8,7 +8,7 @@ public class InteractingWithElement extends DriverSetUp{
     @Test
     public void ExtractDifferentTypeOfElement() throws InterruptedException {
         driver.get("https://rahulshettyacademy.com/AutomationPractice");
-       WebElement title = driver.findElement(By.xpath("//h1[normalize-space()='Practice Page']"));
+        WebElement title = driver.findElement(By.xpath("//h1[normalize-space()='Practice Page']"));
         System.out.println("Title : " + title.getText());
         WebElement radioBtn2 = driver.findElement(By.cssSelector("input[value='radio2']"));
         radioBtn2.click();
@@ -22,7 +22,8 @@ public class InteractingWithElement extends DriverSetUp{
         WebElement selectOption =  driver.findElement(By.xpath("//option[@value='option3']"));
         selectOption.click();
         Thread.sleep(2000);
-        driver.findElement(By.id("checkBoxOption3")).click();
+        WebElement checkbox_3 = driver.findElement(By.id("checkBoxOption3"));
+        checkbox_3.click();
         Thread.sleep(2000);
         WebElement textField_2 = driver.findElement(By.id("name"));
         textField_2.sendKeys("SQA-Batch_31,2025");
@@ -53,6 +54,30 @@ public class InteractingWithElement extends DriverSetUp{
         System.out.println( "Font size : " + fontSize);
         String fontFamily = openWindowProperties.getCssValue("font-family");
         System.out.println("Font family : " + fontFamily);
+
+
+        WebElement isSelectedTheCheckBox = driver.findElement(By.id("checkBoxOption2"));
+        boolean checkTheCheckBox = isSelectedTheCheckBox.isSelected();
+        boolean checkTheCheckBox3 = checkbox_3.isSelected();
+        System.out.println("checkbox 2: " + checkTheCheckBox);
+        System.out.println("checkbox 3: " + checkTheCheckBox3);
+        boolean checkTheCheckBox_3 = isSelectedTheCheckBox.isEnabled();
+        System.out.println("checkbox 3:: " + checkTheCheckBox_3);
+
+        boolean checkBox1 = isSelectedTheCheckBox.isEnabled();
+        System.out.println("checkbox 2:: " + checkBox1);
+        System.out.println("Checkbox 2: " + checkTheCheckBox);
+
+        WebElement show_hideBox = driver.findElement(By.cssSelector("#displayed-text"));
+        System.out.println("Before click : " + show_hideBox.isDisplayed());
+        WebElement hideBox = driver.findElement(By.cssSelector("#hide-textbox"));
+        hideBox.click();
+        System.out.println("After click : " + show_hideBox.isDisplayed());
+
+
+
+
+
 
     }
 }
